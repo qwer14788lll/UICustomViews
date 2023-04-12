@@ -29,6 +29,12 @@ class MainActivity : AppCompatActivity() {
             mBinding.mainTextNumber.text = num.toString()
             save()
         }
+
+        mBinding.mainBtnSubtract1.setOnClickListener {
+            num--
+            mBinding.mainTextNumber.text = num.toString()
+            save()
+        }
     }
 
     private fun save() = getSharedPreferences("data", Context.MODE_PRIVATE).edit().apply { putInt(keyNum, num) }.apply()
