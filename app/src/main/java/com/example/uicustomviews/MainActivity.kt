@@ -16,7 +16,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(mBinding.root)
 
         num = getSharedPreferences("data", Context.MODE_PRIVATE).getInt(keyNum, 0)
-        mBinding.mainTextNumber.text = num.toString()
+
+        show()
 
         mBinding.titleLayout.setTitle("首页")
 
@@ -26,16 +27,19 @@ class MainActivity : AppCompatActivity() {
 
         mBinding.mainBtnAdd1.setOnClickListener {
             num++
-            mBinding.mainTextNumber.text = num.toString()
-            save()
+            show()
         }
 
         mBinding.mainBtnSubtract1.setOnClickListener {
             num--
-            mBinding.mainTextNumber.text = num.toString()
-            save()
+            show()
         }
     }
 
     private fun save() = getSharedPreferences("data", Context.MODE_PRIVATE).edit().apply { putInt(keyNum, num) }.apply()
+
+    private fun show() {
+        mBinding.mainTextNumber.text = num.toString()
+        save()
+    }
 }
