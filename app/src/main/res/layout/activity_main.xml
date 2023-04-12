@@ -40,4 +40,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mainTextNumber" />
 
+    <Button
+        android:id="@+id/mainBtnSubtract1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@color/design_default_color_error"
+        android:padding="10dp"
+        android:text="-1"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainBtnAdd1" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
